@@ -4,13 +4,13 @@ import { inject, observer } from "mobx-react";
 import NewItem from "./NewItem";
 import Items from "./Items";
 
-const UnpackedItems = inject("itemsList")(
+const UnpackedItems = inject("itemList")(
   observer(({ itemList }) => (
     <Items title="Unpacked Items" items={itemList.unpackedItems} />
   ))
 );
 
-const PackedItems = inject("itemsList")(
+const PackedItems = inject("itemList")(
   observer(({ itemList }) => (
     <Items title="Unpacked Items" items={itemList.packedItems} />
   ))
