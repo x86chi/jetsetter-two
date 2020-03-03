@@ -2,7 +2,7 @@ import uniqueId from "lodash/uniqueId";
 import { observable, action, computed } from "mobx";
 
 export default class Item {
-  id = uniqueId;
+  id = uniqueId();
   list;
   @observable value = "";
   @observable packed = false;
@@ -18,7 +18,7 @@ export default class Item {
   }
 
   @action.bound
-  get toggle() {
+  toggle() {
     return (this.packed = !this.packed);
   }
 
